@@ -1,3 +1,16 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+const data = ref(new Date())
+
+const formatarHora = (date: Date) => {
+  return date.toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+  })
+}
+</script>
+
 <template>
   <footer class="wii-footer-wrapper">
     <div class="wii-wave-container">
@@ -16,8 +29,10 @@
 
       <div class="footer-section center">
         <div class="wii-clock-area">
-          <div class="time">Wii font <span class="am-pm">AM</span></div>
-          <div class="date">Sun 5/27</div>
+          <div class="time">
+            <span>{{ formatarHora(data) }}</span>
+          </div>
+          <div class="date">{{ new Date().toLocaleDateString() }}</div>
         </div>
       </div>
 
