@@ -4,3 +4,15 @@
   margin: 0 auto;
   font-weight: normal;
 }
+
+* {
+  font-family: 'WiiFont';
+}
+
+@font-face {
+  font-family: 'WiiFont';
+  src: url('./fonts/wii.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

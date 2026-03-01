@@ -47,8 +47,8 @@ const props = withDefaults(defineProps<Props>(), {
 /* Efeito de Seleção (Azul do Wii) */
 .wii-card:hover {
   transform: scale(1.08);
-  border-color: #4cb3ff;
-  box-shadow: 0 0 20px rgba(76, 179, 255, 0.6);
+  border-color: #00e5ff;
+  box-shadow: 0 0 20px #00e5ff75;
   z-index: 5;
 }
 
@@ -83,7 +83,6 @@ const props = withDefaults(defineProps<Props>(), {
   align-items: center;
   padding: 10px;
   z-index: 2;
-  user-select: none;
 }
 
 .channel-image {
@@ -95,7 +94,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 .channel-text {
   color: #999;
-  font-family: 'Arial Rounded MT Bold', 'Helvetica', sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   text-shadow: 1px 1px 0px #fff;

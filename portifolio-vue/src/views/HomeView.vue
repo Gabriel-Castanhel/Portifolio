@@ -31,7 +31,7 @@ const channels = Array.from({ length: 12 }, (_, i) => ({
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
   padding: 20px;
 }
 
@@ -67,7 +67,6 @@ const channels = Array.from({ length: 12 }, (_, i) => ({
   width: 100%;
 }
 
-/* Estilização extra para o Footer se comportar como o menu do Wii */
 .wii-footer {
   width: 100%;
   margin-top: auto; /* Força para o final */
