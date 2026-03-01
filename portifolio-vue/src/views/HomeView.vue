@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Card from '../components/cards/Card.vue'
 import Footer from '../components/footer/Footer.vue'
-import Perfil from '../components/perfil/MiiPerfil.vue'
 
 // Criamos um array simples para gerar os 12 cards via v-for
 const channels = Array.from({ length: 12 }, (_, i) => ({

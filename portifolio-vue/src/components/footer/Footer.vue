@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 const data = ref(new Date())
 
 const formatarHora = (date: Date) => {
@@ -9,6 +9,27 @@ const formatarHora = (date: Date) => {
     hour12: true,
   })
 }
+
+const dataAtual = ref(new Date())
+
+// Função para formatar a data (ex: 01/03/2026)
+const formatarData = (data: Date) => {
+  return data.toLocaleDateString()
+}
+
+// 2. Criamos o timer quando o componente for montado
+let timer: any
+
+onMounted(() => {
+  timer = setInterval(() => {
+    dataAtual.value = new Date() // Atualiza a referência a cada segundo
+  }, 1000)
+})
+
+// 3. Limpamos o timer quando o componente for destruído (evita vazamento de memória)
+onUnmounted(() => {
+  clearInterval(timer)
+})
 </script>
 
 <template>
@@ -30,9 +51,9 @@ const formatarHora = (date: Date) => {
       <div class="footer-section center">
         <div class="wii-clock-area">
           <div class="time">
-            <span>{{ formatarHora(data) }}</span>
+            <span>{{ formatarHora(dataAtual) }}</span>
           </div>
-          <div class="date">{{ new Date().toLocaleDateString() }}</div>
+          <div class="date">{{ formatarData(dataAtual) }}</div>
         </div>
       </div>
 
